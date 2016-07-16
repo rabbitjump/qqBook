@@ -1,0 +1,312 @@
+/*通用样式*/
+html {
+	font-size: 100%;
+	background-color: black;
+}
+
+body {
+	font-size: 1em;
+	margin: 0;
+}
+
+body * {
+	margin: 0;
+	padding: 0;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+li {
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.comWidth {
+	width: 1002px;
+	margin: auto;
+}
+
+/*topNav样式*/
+.topNav {
+	color: white;
+	font-size: 12px;
+	position: relative;
+	height: 33px;
+	color: white;
+	background-color: #4095D5;
+}
+
+.topNav i.iShow {
+	-webkit-transform: rotate(180deg);
+	top: -3px;/*与三角形翻转之前相反*/
+}
+
+.topNav i {
+	display: inline-block;
+	position: relative;
+	left: 2px;
+	top: 3px;
+	width: 0;
+	height: 0;
+	border: 4px solid;
+	border-color: #FFF transparent transparent transparent;
+	border-style: solid dashed dashed dashed;
+	-webkit-transition: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+}
+
+.topMargin {
+	line-height: 32px;
+}
+
+.topNav a {
+	color: white;
+	line-height: 24px;
+}
+
+.topNav li {
+	width: 92px;
+	background-color: #4095D5;
+}
+
+.topList a {
+	display: block;
+
+}
+
+
+.topNav .head {
+	padding-left: 10px;
+	display: inline-block;
+}
+
+
+li.list {/*显示前*/
+	height: 26px;
+	overflow: hidden;
+	border: 1px solid #4095D5;
+}
+
+li.listShow {/*hover显示*/
+	border: 1px solid white;
+}
+
+li.listShow div a:hover {
+	background-color: green;
+}
+
+a.one {
+	background:url(http://img1.chuangshi.qq.com/book/p1/ico/cs.png) 8% 45% no-repeat;
+	text-indent: 24px;
+}
+
+
+.topLeft {
+	height: 33px;
+	margin-left: 180px;
+	margin-right: 368px;
+}
+
+.topRight {
+	height: 33px;
+}
+
+.topNav .loginBox a:first-child {
+	margin-right: 38px;
+}
+
+.topNav span {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.userCenter {
+	margin-right: 5px;
+}
+
+/*pageCenter样式*/
+.pageCenter {
+	padding: 7px 0;
+}
+
+.pageCenter .hotwords {
+	color: #999;
+	padding-left: 7px;
+	padding-top: 5px;
+}
+
+.hotwords a {
+	color: #999;
+	margin-right: 10px;
+}
+
+
+.hotwords a:hover {
+	color: blue;
+}
+
+.pageHead {
+	height: 128px;
+}
+
+.pageHead .logo {
+	padding-top: 13px;
+	margin-right: 76px;
+}
+
+.inputSearch {
+	width: 500px;
+	height: 32px;
+	margin-top: 33px;
+	border:2px solid #5EA3E6;
+	line-height: 34px;
+	font-size: 14px;
+
+}
+
+.inputSearch .searchClass {
+	color: #666;
+	line-height: 32px;
+}
+
+.inputSearch span.partLine {
+	padding-right: 3px;
+	height: 12px;
+	width: 0;
+	border-left: 2px solid #CCC;
+	margin-top: 12px;
+}
+
+.pageHead .searchText {
+	width: 396px;
+	height: 30px;
+	line-height: 34px;
+	font-size: 14px;
+	border: none;
+	color: #999;
+	outline: none;
+/*	margin-bottom: 1px solid #4095D5;
+*/}
+
+.pageHead .searchClass {
+	position: relative;
+	width: 62px;
+	text-indent: 7px;
+}
+
+.pageHead .searchClass a {
+	display: block;
+	color: #666;
+	height: 25px;
+	line-height: 25px;
+}
+
+.pageHead .searchClass a:hover {
+	background-color: lightgreen;
+}
+
+.pageHead .searchClass span {
+	cursor: pointer;
+	display: block;
+	background:url(http://img1.chuangshi.qq.com/book/p1/ico/adown.png) no-repeat 88% 55%;
+}
+
+.pageHead .searchBox {
+	height: 100px;
+	width: 62px;
+	position: absolute;
+	left: -2px;
+	background-color: white;
+	border: 2px solid #5EA3E6;
+	border-top: none;
+	display: none;
+	z-index: 2;
+}
+.pageCenter .searchBtn {
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/searchBtn.png) no-repeat;
+	border: none;
+	width: 36px;
+	height: 34px;
+	cursor: pointer;
+}
+
+.pageCenter .codeImg {
+	font-size: 12px;
+	width: 103px;
+ 	height: 111px;
+ 	border: 1px solid #DDD;
+ 	text-align: center;/*里面的内容居中*/
+ 	position: relative;
+}
+
+.codeImg p {
+	font-size: 12px;
+	height: 21px;
+	padding-top: 3px;
+	line-height: 21px;
+}
+
+.codeImg a.close {
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	top: -1px;
+	right: -2px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/codeClose.png) no-repeat;
+}
+
+/*.recommend样式*/
+.recommend {
+	height: 360px;
+	width: 1000px;
+	position: relative;
+}
+
+.recommend .imgBox div {
+	position: absolute;
+	opacity: 0;
+}
+
+.recommend .suspendBox {
+	width: 300px;
+	height: 335px;
+	position: absolute;
+	background-color: white;
+	top: 12px;
+	right: 12px;
+	box-shadow: 0 0 10px 0 #777;
+	z-index: 4
+}
+
+.recommend .switcher {
+	position: absolute;
+	z-index: 5;
+	bottom: 0;
+	left: 10px;
+}
+
+
+.recommend .switcher a {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 8px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/circle.png) no-repeat;
+}
+
+.recommend .switcher a.chosen {
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/cirCur.png) no-repeat;
+}
+
+.recommend .imgBox .firstShow {
+	opacity: 1;
+}
