@@ -45,41 +45,41 @@ $(document).ready(function() {
 
     //.recommend图片切换
     //自动换图功能
-    var t = 0;
-    var timer;
-    var change = function() {
-        return setInterval(function() {
-            $(".switcher").find('.chosen').removeClass('chosen');
-            if (t === 6) {
-                t = 0;
-            }
-            $(".switcher a").eq(t).addClass('chosen');
-            $(".imgBox div").stop();
-            $(".imgBox div").slice(0, t).animate({ "opacity": 0 }, 1000);
-            $(".imgBox div").slice(t + 1).animate({ "opacity": 0 }, 1000);
-            $(".imgBox div").eq(t).animate({ "opacity": 1 }, 1000);
-
-            t++;
-        }, 3000);
+    function cut(counter) {
+        if (counter === 6) {
+            counter = 0
+        }
+        $(".switcher").find('.chosen').removeClass('chosen');
+        $(".switcher a").eq(counter).addClass('chosen');
+        $(".imgBox div").stop();
+        if (counter == 0) {
+            $(".imgBox div").slice(1).animate({ "opacity": 0 }, 1000);
+        } else {
+            $(".imgBox div").slice(0, counter).animate({ "opacity": 0 }, 1000);
+            $(".imgBox div").slice(counter + 1).animate({ "opacity": 0 }, 1000);
+        }
+        $(".imgBox div").eq(counter).animate({ "opacity": 1 }, 1000);
     };
-    timer = change();
+    var t = 1; //装载下一张图片的位置
+    var change = setInterval(function() {
+        cut(t);
+        t++;
+    }, 3000);
 
-    //下方切换栏功能
+    //下方切换栏功能.重复mouseenter触发多个setinteral!
     $(".switcher a").map(function(index) {
         $(this).mouseenter(function() {
-            clearInterval(timer);
-            $(".switcher").find(".chosen").removeClass("chosen");
-            $(this).addClass("chosen");
-            $(".imgBox div").stop();
-            $(".imgBox div").slice(0, index).animate({ "opacity": 0 }, 1000);
-            $(".imgBox div").slice(index + 1).animate({ "opacity": 0 }, 1000);
-            $(".imgBox div").eq(index).animate({ "opacity": 1 }, 1000);
-            t = index;
-        }).mouseleave(function() {
-            timer = change();
+            clearInterval(change);
+            cut(index);
+            t = index+1;
+            change = setInterval(function() {
+                cut(t)
+                t++;
+            }, 3000);
         });
-
     });
+
+
 
 
 
