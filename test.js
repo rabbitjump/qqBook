@@ -46,32 +46,28 @@ $(document).ready(function() {
     //.recommend图片切换
     //自动换图功能
     var t = 0;
+    var timer;
     var change = function() {
         return setInterval(function() {
             $(".switcher").find('.chosen').removeClass('chosen');
-            if (t < 7) {
-                $(".switcher a").eq(t).addClass('chosen');
-                $(".imgBox div").stop();
-                $(".imgBox div").slice(0, t).animate({ "opacity": 0 }, 1000);
-                $(".imgBox div").slice(t + 1).animate({ "opacity": 0 }, 1000);
-                $(".imgBox div").eq(t).animate({ "opacity": 1 }, 1000);
-            } else {
+            if (t === 6) {
                 t = 0;
-                $(".switcher a").eq(t).addClass('chosen');
-                $(".imgBox div").stop();
-                $(".imgBox div").slice(0, t).animate({ "opacity": 0 }, 1000);
-                $(".imgBox div").slice(t + 1).animate({ "opacity": 0 }, 1000);
-                $(".imgBox div").eq(t).animate({ "opacity": 1 }, 1000);
             }
+            $(".switcher a").eq(t).addClass('chosen');
+            $(".imgBox div").stop();
+            $(".imgBox div").slice(0, t).animate({ "opacity": 0 }, 1000);
+            $(".imgBox div").slice(t + 1).animate({ "opacity": 0 }, 1000);
+            $(".imgBox div").eq(t).animate({ "opacity": 1 }, 1000);
+
             t++;
         }, 3000);
     };
-    change();
+    timer = change();
 
     //下方切换栏功能
     $(".switcher a").map(function(index) {
         $(this).mouseenter(function() {
-            clearInterval(change);
+            clearInterval(timer);
             $(".switcher").find(".chosen").removeClass("chosen");
             $(this).addClass("chosen");
             $(".imgBox div").stop();
@@ -79,7 +75,8 @@ $(document).ready(function() {
             $(".imgBox div").slice(index + 1).animate({ "opacity": 0 }, 1000);
             $(".imgBox div").eq(index).animate({ "opacity": 1 }, 1000);
             t = index;
-            change();
+        }).mouseleave(function() {
+            timer = change();
         });
 
     });
