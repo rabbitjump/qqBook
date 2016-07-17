@@ -46,9 +46,9 @@ $(document).ready(function() {
     //.recommend图片切换
     //自动换图功能
     function cut(counter) {
-        if (counter === 6) {
-            counter = 0
-        }
+        // if (counter === 6) {
+        //     counter = 0
+        // }
         $(".switcher").find('.chosen').removeClass('chosen');
         $(".switcher a").eq(counter).addClass('chosen');
         $(".imgBox div").stop();
@@ -60,21 +60,30 @@ $(document).ready(function() {
         }
         $(".imgBox div").eq(counter).animate({ "opacity": 1 }, 1000);
     };
-    var t = 1; //装载下一张图片的位置
-    var change = setInterval(function() {
-        cut(t);
-        t++;
-    }, 3000);
 
-    //下方切换栏功能.重复mouseenter触发多个setinteral!
+    var tAdd = function() {
+        t++;
+        if (t === 6) {
+            t = 0;
+        };
+    };
+
+    var t = 1; //装载下一张图片的位置,初始加载已显示第一张(t=0)。
+    var interalId = setInterval(function() {
+        cut(t);
+        tAdd();
+    }, 3000); //只能每次初始化setinteral时对interalId赋值，因setinteral的ID值唯一
+ 
+    //下方切换栏功能.
     $(".switcher a").map(function(index) {
         $(this).mouseenter(function() {
-            clearInterval(change);
+            clearInterval(interalId);
             cut(index);
-            t = index+1;
-            change = setInterval(function() {
-                cut(t)
-                t++;
+            t = index;
+            tAdd();
+            interalId = setInterval(function() {
+                cut(t);
+                tAdd();
             }, 3000);
         });
     });
