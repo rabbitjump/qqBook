@@ -22,8 +22,9 @@ body * {
 }
 
 li {
-	list-style: none;
+		list-style: none;
 }
+
 
 a{
 	text-decoration: none;
@@ -76,6 +77,7 @@ a{
 	width: 92px;
 	background-color: #4095D5;
 }
+
 
 .topList a {
 	display: block;
@@ -154,7 +156,7 @@ a.one {
 }
 
 .pageHead {
-	height: 128px;
+	height: 121px;
 }
 
 .pageHead .logo {
@@ -276,8 +278,9 @@ a.one {
 }
 
 .recommend .suspendBox {
-	width: 300px;
-	height: 335px;
+	width: 276px;
+	height: 299px;
+	padding: 16px 12px;
 	position: absolute;
 	background-color: white;
 	top: 12px;
@@ -285,6 +288,50 @@ a.one {
 	box-shadow: 0 0 10px 0 #777;
 }
 
+.recommend .suspendBox li {
+/*	list-style-position: inside;*/
+	height: 36px;
+	line-height: 36px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/bluePoint.png) left no-repeat;
+	font-size: 12px;
+	padding-left: 8px;
+	border-bottom: 1px dotted #DDD;
+	overflow: hidden;
+}
+
+.recommend .suspendBox h3 {
+	font-weight: 100;
+	height: 27px;
+	line-height: 27px;
+	font-size: 15px;
+	color: #0773C0;
+	padding-left: 24px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/newNotice.png) left no-repeat;
+}
+
+.recommend .suspendBox .innerBox h3.marginSet {
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/readsite.png) left no-repeat;
+	margin: 15px 0;
+}
+
+.recommend .suspendBox .innerBox .other a {
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 26px;
+	margin-right: 10px;
+	font-size: 14px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/ico/cs_ico.png) left no-repeat;
+
+}
+
+.other {
+	white-space: nowrap;
+}
+
+.recommend .suspendBox a {
+	color: #666;
+}
 .recommend .switcher {
 	position: absolute;
 	z-index: 5;
@@ -308,3 +355,4 @@ a.one {
 .recommend .imgBox .firstShow {
 	opacity: 1;
 }
+

@@ -45,20 +45,19 @@ $(document).ready(function() {
 
     //.recommend图片切换
     //自动换图功能
-    function cut(counter) {
-        // if (counter === 6) {
-        //     counter = 0
-        // }
-        $(".switcher").find('.chosen').removeClass('chosen');
-        $(".switcher a").eq(counter).addClass('chosen');
-        $(".imgBox div").stop();
-        if (counter == 0) {
-            $(".imgBox div").slice(1).animate({ "opacity": 0 }, 1000);
-        } else {
-            $(".imgBox div").slice(0, counter).animate({ "opacity": 0 }, 1000);
-            $(".imgBox div").slice(counter + 1).animate({ "opacity": 0 }, 1000);
-        }
-        $(".imgBox div").eq(counter).animate({ "opacity": 1 }, 1000);
+    function cut(nowEl, nextEl) {
+        var imgBox = $(".imgBox div");
+        $(".switcher a").eq(nowEl).removeClass('chosen');
+        $(".switcher a").eq(nextEl).addClass('chosen');
+        imgBox.eq(nowEl).stop().animate({ "opacity": 0 }, 1000);
+        imgBox.eq(nextEl).animate({ "opacity": 1 }, 1000);
+    };
+
+    var nAdd = function() {
+        n++;
+        if (n === 6) {
+            n = 0;
+        };
     };
 
     var tAdd = function() {
@@ -68,22 +67,29 @@ $(document).ready(function() {
         };
     };
 
-    var t = 1; //装载下一张图片的位置,初始加载已显示第一张(t=0)。
+    var n = 0; //存放现在显示的图片位置
+    var t = 1; //存放下一张图片的位置
     var interalId = setInterval(function() {
-        cut(t);
+        cut(n, t);
         tAdd();
+        nAdd();
     }, 3000); //只能每次初始化setinteral时对interalId赋值，因setinteral的ID值唯一
- 
+
     //下方切换栏功能.
     $(".switcher a").map(function(index) {
         $(this).mouseenter(function() {
             clearInterval(interalId);
-            cut(index);
-            t = index;
-            tAdd();
+            cut(n, index);
+            n = index;
+            if (index === 5) {
+                t = 0;
+            } else {
+                t = index + 1;
+            };
             interalId = setInterval(function() {
-                cut(t);
+                cut(n, t);
                 tAdd();
+                nAdd();
             }, 3000);
         });
     });
