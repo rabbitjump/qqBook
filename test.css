@@ -35,6 +35,14 @@ a{
 	margin: auto;
 }
 
+h3 {
+	font-weight: 100;
+}
+
+h4 {
+	font-weight: 100;
+}
+
 /*topNav样式*/
 .topNav {
 	color: white;
@@ -286,6 +294,7 @@ a.one {
 	top: 12px;
 	right: 12px;
 	box-shadow: 0 0 10px 0 #777;
+	z-index: 3;
 }
 
 .recommend .suspendBox li {
@@ -356,3 +365,150 @@ a.one {
 	opacity: 1;
 }
 
+.books {
+	height: 422px;
+	margin-bottom: 20px;
+	background: url(http://img1.chuangshi.qq.com/book/p1/chtit.png) no-repeat;
+	margin-top: 22px;
+}
+
+.books .booksTitle {
+	width: 668px;
+	height: 43px;
+	line-height: 43px;
+	color: #FFF;
+}
+
+.books .booksTitle a {
+	color: #FFF;
+}
+
+.books .booksTitle .fl a {
+	font-family: Arial;
+	display: inline-block;
+	padding-top: 1px;
+	padding-left: 11px;
+	font-size: 14px;
+}
+
+.books .booksTitle h3 {
+	font-size: 18px;
+	font-weight: 100;
+	padding-left: 19px;
+}
+
+.books .booksTitle .titleRight {
+	line-height: 48px;
+	margin-right: 5px;
+}
+
+.books .booksTitle .titleRight a {
+	font-family: simsun;
+	font-size: 14px;
+	border-right: 1px solid #DDD;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
+.books .detail {
+	color: #666;
+}
+
+.books .booksWrap {
+	padding-top: 26px;
+	border-left: 3px solid #F2F2F2;
+	border-right: 3px solid #F2F2F2;
+	border-bottom: 3px solid #F2F2F2;
+	height: 350px;
+}
+
+.books .booksTitle .titleRight a:last-child {
+	border: 0;
+}
+
+.books .booksLeft {
+	padding-left: 23px;
+	width: 204px;
+	margin-right: 44px;
+}
+
+.books .booksLeft h4 {
+	font-size: 15px;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 14px;
+	margin-bottom: 8px;
+}
+
+.books .booksLeft a {
+	color: #0773C0;
+}
+
+.books .booksLeft p {
+	font-size: 13px;
+	line-height: 1.8;
+	height: 42px;
+	width: 204px;
+	overflow: hidden;
+}
+
+.books .booksLeft img {
+	border: 2px solid #CCC;
+}
+
+.books .booksRight {
+	width: 370px;
+}
+
+.books .booksRight img {
+	width: 62px;
+	height: 78px;
+	margin-right: 18px;
+}
+
+.books .booksRight h4 {
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+
+.books .booksRight h4 a {
+	color: #0773C0;
+}
+
+.books .booksRight p {
+	font-size: 12px;
+	line-height: 1.8;
+}
+
+.books .booksRight p a:hover {
+	color: #0773C0;
+}
+
+.books .booksRight .block {
+	height: 79px;
+	border-bottom: 1px dotted #DDD;
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+}
+
+.color999 {
+	color: #999;
+}
+
+.books .booksRight .bottomBook {
+	height: 38px;
+}
+
+.books .booksRight .bottomBook p {
+	font-size: 14px;
+	line-height: 1.8;
+	overflow: hidden;
+}
+
+.bottomBook .last {
+	margin-right: 12px;
+}
+
+.blue {
+	color: #0773C0;
+}

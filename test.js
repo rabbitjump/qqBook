@@ -47,24 +47,20 @@ $(document).ready(function() {
     //自动换图功能
     function cut(nowEl, nextEl) {
         var imgBox = $(".imgBox div");
-        $(".switcher a").eq(nowEl).removeClass('chosen');
-        $(".switcher a").eq(nextEl).addClass('chosen');
-        imgBox.eq(nowEl).stop().animate({ "opacity": 0 }, 1000);
+        var a = $(".switcher a");
+        imgBox.eq(nowEl).stop();
+        a.eq(nowEl).removeClass('chosen');
+        a.eq(nextEl).addClass('chosen');
+        imgBox.eq(nowEl).animate({ "opacity": 0 }, 1000);
         imgBox.eq(nextEl).animate({ "opacity": 1 }, 1000);
     };
 
     var nAdd = function() {
-        n++;
-        if (n === 6) {
-            n = 0;
-        };
+        n = (n+1)%6;
     };
 
     var tAdd = function() {
-        t++;
-        if (t === 6) {
-            t = 0;
-        };
+        t = (t+1)%6;
     };
 
     var n = 0; //存放现在显示的图片位置
@@ -73,7 +69,7 @@ $(document).ready(function() {
         cut(n, t);
         tAdd();
         nAdd();
-    }, 3000); //只能每次初始化setinteral时对interalId赋值，因setinteral的ID值唯一
+    }, 2000); //只能每次初始化setinteral时对interalId赋值，因setinteral的ID值唯一
 
     //下方切换栏功能.
     $(".switcher a").map(function(index) {
@@ -81,11 +77,7 @@ $(document).ready(function() {
             clearInterval(interalId);
             cut(n, index);
             n = index;
-            if (index === 5) {
-                t = 0;
-            } else {
-                t = index + 1;
-            };
+            t = (index + 1)%6;
             interalId = setInterval(function() {
                 cut(n, t);
                 tAdd();
