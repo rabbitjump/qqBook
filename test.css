@@ -496,7 +496,7 @@ a.one {
 }
 
 .books .booksRight .bottomBook {
-	height: 38px;
+	overflow: auto;
 }
 
 .books .booksRight .bottomBook p {
@@ -511,4 +511,265 @@ a.one {
 
 .blue {
 	color: #0773C0;
+}
+
+.books .right {
+	width: 312px;
+	margin-top: 8px;
+}
+
+.books .right .head {
+	color: white;
+	height: 35px;
+	background-color: #4095D5;
+}
+
+.books .right .head h4 {
+	font-size: 14px;
+	line-height: 35px;
+	padding-left: 10px;
+}
+
+.books .right .head span {
+	font-size: 12px;
+	display: inline-block;
+	width: 46px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 6px;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+
+}
+
+
+.books .right .head .tab {
+	margin-right: 4px;
+}
+.books .right .head span.tabBar {
+	color: #4095D5;
+	background-color: white;
+}
+
+i.tabI {
+	position: absolute;
+	bottom: -8px;
+	left: 45%;
+	width: 0;
+	height: 0;
+	border: 4px solid;
+	border-color: #FFF transparent transparent transparent;
+}
+
+.books .right .rankBar {
+	font-size: 12px;
+}
+
+.rankBar .row {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #CACACA;
+}
+
+.rankBar .row .readNum {
+    color: #4095D5;
+	font-family: arial;
+	width: 56px;
+}
+
+.rankBar .row a {
+	width: 220px;
+	color: #666
+}
+
+
+.rankBar .rankNumber {
+	text-align: center;
+	line-height: 16px;
+	color: white;
+	width: 16px;
+	height: 16px;
+	margin-top: 7px;
+	margin-right: 5px;
+	margin-left: 10px;
+	background-color: #CACACA;
+}
+
+.rankBar .topThree {
+	background-color: #4095D5;
+}
+
+.rankBar .detail {
+	margin-left: 10px;
+	position: relative;
+	border-bottom: 1px solid #CACACA;
+	padding-bottom: 10px;
+	padding-top: 3px;
+	overflow: auto;
+	display: none;
+}
+
+.rankBar #firstShow {
+	display: block;
+}
+
+.rankBar .firstHide {
+	display: none;
+}
+
+.rankBar .detail img {
+	width: 55px;
+	height: 74px;
+	margin-top: 7px;
+	margin-right: 16px;
+}
+
+.rankBar #first {
+	display: block;
+}
+
+.rankBar .detail span.showDiv {
+	position: absolute;
+	left: -10px;
+}
+
+.rankBar .detail h4 {
+	font-size: 14px;
+	margin-bottom: 12px;
+}
+
+.rankBar .detail h4 a {
+	color: #4095D5;
+}
+
+.rankBar .detail p {
+	margin-bottom: 10px;
+}
+.rankBar .detail p a {
+	color: #666;
+}
+
+.rankBar .detailInfo {
+	margin-top: 16px;
+}
+
+.rankBar ul.mostTickets {
+	display: none;
+}
+
+.foot {
+	position: relative;
+}
+
+.foot .girl {
+	position: absolute;
+	left: -80px;
+}
+
+.foot .codeWrap {
+	position: absolute;
+	left: 566px;
+	top: 30px;
+	text-align: center;
+	width: 102px;
+	color: #FFF;
+	height: 374px;
+}
+
+.foot .codeWrap div {
+	background: url(http://img1.chuangshi.qq.com/book/p1/codeBox.png);
+	height: 140px;
+	font-size: 16px;
+}
+
+.foot .codeWrap p {
+	line-height: 35px;
+}
+
+.foot .codeWrap img {
+	margin-top: 14px;
+}
+
+.foot .codeWrap .code2 {
+	margin-top: 20px;
+}
+
+.foot .siteLink {
+	position: absolute;
+	top: 31px;
+	right: 0;
+	width: 312px;
+}
+
+.foot .siteLink a {
+	color: #FFF;
+	display: inline-block;
+}
+
+.foot .siteLink .commonA {
+	width: 132px;
+	height: 73px;
+	padding-left: 18px;
+	padding-top: 11px;
+	background: #FF3699 url(http://img1.chuangshi.qq.com/book/p1/ico/yqIco.png) 85% 30% no-repeat;
+	border-bottom: 5px solid #DD0772;
+}
+
+.foot .siteLink .a_cs {
+	width: 296px;
+	height: 80px;
+	padding-top: 12px;
+	padding-left: 16px;
+	border-bottom: 5px solid #D32B1A;
+	background: #E63F2F url(http://img1.chuangshi.qq.com/book/p1/ico/csIco.png) 85% 30% no-repeat;
+}
+
+.foot .siteLink .a_cs h3 {
+	font-size: 26px;
+	margin-bottom: 7px;
+}
+
+.foot .siteLink .f12 {
+	font-family: Arial;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.foot .siteLink .f14 {
+	font-size: 14px;
+	height: 21px;
+	line-height: 21px;
+	margin-top: 2px;
+}
+
+.foot .siteLink .a_yq {
+	position: absolute;
+	left: 0;
+	top: 111px;
+}
+
+.foot .siteLink h4 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+
+.foot .siteLink .a_read {
+	position: absolute;
+	right: 0;
+	top: 111px;
+}
+
+.foot .siteLink .a_bbs {
+	position: absolute;
+	left: 0;
+	top: 212px;
+}
+
+.foot .siteLink .a_service {
+	position: absolute;
+	right: 0;
+	top: 212px;
 }

@@ -56,11 +56,11 @@ $(document).ready(function() {
     };
 
     var nAdd = function() {
-        n = (n+1)%6;
+        n = (n + 1) % 6;
     };
 
     var tAdd = function() {
-        t = (t+1)%6;
+        t = (t + 1) % 6;
     };
 
     var n = 0; //存放现在显示的图片位置
@@ -77,13 +77,36 @@ $(document).ready(function() {
             clearInterval(interalId);
             cut(n, index);
             n = index;
-            t = (index + 1)%6;
+            t = (index + 1) % 6;
             interalId = setInterval(function() {
                 cut(n, t);
                 tAdd();
                 nAdd();
             }, 3000);
         });
+    });
+
+    //排行榜
+    //顶部榜单切换
+    $(".head span").click(function() {
+        $(this).addClass('tabBar');
+        $(this).find("i").addClass('tabI');
+        $(this).siblings().removeClass('tabBar');
+        $(this).siblings().find("i").removeClass('tabI');
+        if ($(this).hasClass('popular')) {
+            $("ul.popular").show();
+            $("ul.mostTickets").hide();
+        } else {
+            $("ul.popular").hide();
+            $("ul.mostTickets").show();
+        }
+    });
+    //显示书的详细信息
+    $(".rankBar li").mouseover(function() {
+        $(this).find('.row').hide();
+        $(this).find(".detail").show();
+        $(this).siblings().find('.detail').hide()
+            .addBack().find('.row').show();
     });
 
 
